@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dojic3bhhp67v"]
+
+[ext_resource type="Script" uid="uid://comkkcqe5whxh" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://reskehrf2a5r" path="res://crystal_wall.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bdpb7tjx46m1m" path="res://guy.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://buvf4rsf7l4u3" path="res://rock_wall.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dvbrwiqbvd8u4" path="res://code_wall.gd" id="5_4c57u"]
+[ext_resource type="FontFile" uid="uid://cmh8p0n4tk675" path="res://JetBrainsMono-Regular.ttf" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://dvv3fuwj4cpjj" path="res://npc.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bjiby2wll8er2" path="res://metal_wall.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://coiljw80ma6q7" path="res://interaction_collision.gd" id="6_efxa6"]
+[ext_resource type="ArrayMesh" uid="uid://x7674nxdfq6f" path="res://Antonio Terrain VOX 001.obj" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://c1pnmnmisyhbg" path="res://Antonio Terrain VOX TEX 001.png" id="10_dg77c"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_272bh"]
+viewport_path = NodePath("WriteableRockWall/InteractionCollision/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
+albedo_texture = ExtResource("10_dg77c")
+
+[node name="Main" type="Node" unique_id=801816566]
+script = ExtResource("1_ig7tw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1801279040]
+transform = Transform3D(1, 0, 0, 0, 0.6786854, 0.7344291, 0, -0.7344291, 0.6786854, 0, 54.748634, 54.712864)
+shadow_enabled = true
+
+[node name="CrystalWall2" parent="." unique_id=540890484 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
+
+[node name="CrystalWall3" parent="." unique_id=609588757 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
+
+[node name="CrystalWall4" parent="." unique_id=935460841 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 15)
+
+[node name="Guy" parent="." unique_id=119122340 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 12)
+
+[node name="WriteableRockWall" parent="." unique_id=278551718 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 2.5, 0)
+script = ExtResource("5_4c57u")
+
+[node name="Sprite3D" type="Sprite3D" parent="WriteableRockWall" unique_id=547301746]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, 0.51, 0, 0)
+texture = SubResource("ViewportTexture_272bh")
+
+[node name="InteractionCollision" type="Area3D" parent="WriteableRockWall" unique_id=1909234743]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.2, -0.1999999, 0.6)
+script = ExtResource("6_efxa6")
+
+[node name="SubViewport" type="SubViewport" parent="WriteableRockWall/InteractionCollision" unique_id=851319109]
+render_target_update_mode = 4
+
+[node name="TextEdit" type="TextEdit" parent="WriteableRockWall/InteractionCollision/SubViewport" unique_id=255797200]
+custom_minimum_size = Vector2(512, 512)
+offset_right = 512.0
+offset_bottom = 512.0
+theme_override_fonts/font = ExtResource("5_272bh")
+placeholder_text = "
+ >>> Type here <<<"
+caret_type = 1
+caret_blink = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WriteableRockWall/InteractionCollision" unique_id=1210925725]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2, 1, -1)
+shape = SubResource("BoxShape3D_4c57u")
+
+[node name="RockWall2" parent="." unique_id=1367934915 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 2.5, 5)
+
+[node name="RockWall3" parent="." unique_id=1622722399 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 2.5, 10)
+
+[node name="RockWall4" parent="." unique_id=850281633 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10, 2.5, 15)
+
+[node name="NPC" parent="." unique_id=1989813200 instance=ExtResource("5_lquwl")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -4, 2, 11)
+
+[node name="CrystalWall5" parent="." unique_id=414835732 instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 25)
+
+[node name="AntonioTerrainVox001" type="MeshInstance3D" parent="." unique_id=2107680981]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, -71, 0, 5)
+visible = false
+mesh = ExtResource("9_efxa6")
+surface_material_override/0 = SubResource("StandardMaterial3D_w48qg")
+
+[connection signal="area_entered" from="WriteableRockWall/InteractionCollision" to="WriteableRockWall/InteractionCollision" method="_on_area_entered"]

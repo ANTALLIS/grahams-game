@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://reskehrf2a5r"]
+
+[ext_resource type="Texture2D" uid="uid://dcoe6avptsjxh" path="res://crystal_wall06.png" id="1_xxgf6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oh6kn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxgf6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4f30"]
+albedo_texture = ExtResource("1_xxgf6")
+uv1_offset = Vector3(0.5, -0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="CrystalWall" type="StaticBody3D" unique_id=1867207756]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=612248597]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_oh6kn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1219906246]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_xxgf6")
+surface_material_override/0 = SubResource("StandardMaterial3D_y4f30")

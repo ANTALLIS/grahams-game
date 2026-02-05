@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b48imteyudlvk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxgf6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh6kn"]
+uv1_offset = Vector3(0.5, -0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_oh6kn"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_oh6kn")
+
+[node name="Wall" type="StaticBody3D" unique_id=692216746]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1565691546]
+shape = SubResource("BoxShape3D_xxgf6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=520437599]
+mesh = SubResource("BoxMesh_oh6kn")
