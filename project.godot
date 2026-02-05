@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Grahams Game"
 
+[global_group]
+
+Player=""
+
 [input]
 
 forward={

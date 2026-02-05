@@ -134,6 +134,18 @@ func run_lua_script_test_two():
 	else:
 		print(result)  # [LuaTable:0x556069ee50ab]
 
+func run_lua_script(codestring: String):
+	var lua = LuaState.new()
+	lua.open_libraries()
+	assert(lua.globals is LuaTable)
+	lua.globals["print_hello"] = print_hello
+	lua.globals["spawn_wall"] = spawn_wall
+	var result = lua.do_string(codestring)
+	if result is LuaError:
+		printerr("Error in Lua code: ", result)
+	else:
+		print(result)  # [LuaTable:0x556069ee50ab]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("Ready!")
