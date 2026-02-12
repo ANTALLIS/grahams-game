@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cf551bypgldtf"]
+
+[ext_resource type="Texture2D" uid="uid://d1jhlm50wvuvg" path="res://rltiles/dngn/floor/metal_gold0.png" id="1_h3emi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oh6kn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxgf6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4f30"]
+albedo_texture = ExtResource("1_h3emi")
+uv1_offset = Vector3(0.5, -0.5, 0.5)
+uv1_triplanar = true
+uv2_triplanar = true
+texture_filter = 0
+billboard_keep_scale = true
+grow_amount = -1.0
+
+[node name="CrystalWall" type="StaticBody3D" unique_id=1867207756]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=612248597]
+shape = SubResource("BoxShape3D_oh6kn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1219906246]
+mesh = SubResource("BoxMesh_xxgf6")
+surface_material_override/0 = SubResource("StandardMaterial3D_y4f30")

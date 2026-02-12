@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c3g4jq3kwcxlt"]
+
+[ext_resource type="Texture2D" uid="uid://b1hx1f5h0lclo" path="res://icon.svg" id="1_fufxm"]
+
+[node name="CodeBlock" type="Sprite3D" unique_id=1069235447]
+billboard = 2
+texture = ExtResource("1_fufxm")

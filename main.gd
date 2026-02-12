@@ -77,7 +77,8 @@ func spawn_floor():
 	for x in range(100):
 		for z in range(100):
 			if ((5 * z) < 80 || (5 * z) > 90):
-				spawn_wall((5*x) - 50, -2.5, (5*z) - 50, "FloorSilver0")
+				# spawn_wall((5*x) - 50, -2.5, (5*z) - 50, "FloorSilver0")
+				pass
 
 
 func run_lua_script_test():
