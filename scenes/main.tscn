@@ -9,7 +9,7 @@
 [ext_resource type="ArrayMesh" uid="uid://x7674nxdfq6f" path="res://entities/environment/terrain/Antonio Terrain VOX 001.obj" id="7_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://c1pnmnmisyhbg" path="res://entities/environment/terrain/Antonio Terrain VOX TEX 001.png" id="8_yc10j"]
 [ext_resource type="FontFile" uid="uid://cmh8p0n4tk675" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="9_jscy8"]
-[ext_resource type="Script" uid="uid://dd2rg0qknp4mq" path="res://systems/lua_code_edit.gd" id="10_pm3ni"]
+[ext_resource type="Script" uid="uid://dd2rg0qknp4mq" path="res://systems/lua_editor/lua_code_edit.gd" id="10_pm3ni"]
 [ext_resource type="Script" uid="uid://exibwimgwxw0" path="res://scripts/win_cube.gd" id="11_y6deb"]
 [ext_resource type="PackedScene" uid="uid://cf551bypgldtf" path="res://entities/environment/metal_floor/metal_floor.tscn" id="12_og1vs"]
 [ext_resource type="Texture2D" uid="uid://bwjfb3en0u2sp" path="res://rltiles/dngn/floor/limestone0.png" id="13_2wyq8"]
