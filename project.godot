@@ -19,6 +19,11 @@ run/main_scene="uid://dojic3bhhp67v"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/inferred_declaration=2
+
 [dotnet]
 
 project/assembly_name="Grahams Game"

@@ -1,8 +1,8 @@
 extends LuaCodeEdit
 
-@onready var wall = preload("res://entities/environment/wall/wall.tscn")
+@onready var wall: PackedScene = preload("res://environment/wall/wall.tscn")
 
-var texture_library = {
+var texture_library: Dictionary[String, String] = {
 	"Bars": "res://rltiles/dngn/wall/bars_red01.png",
 	"Beehive0": "res://rltiles/dngn/wall/beehives0.png",
 	"Beehive1": "res://rltiles/dngn/wall/beehives1.png",
@@ -25,33 +25,33 @@ var texture_library = {
 	"FloorSilver0": "res://rltiles/dngn/floor/metal_silver0.png"
 }
 
-func spawn_wall(x: float, y: float, z: float, type_name: String):
+func spawn_wall(x: float, y: float, z: float, type_name: String) -> void:
 	# Instance the base wall
-	var wall_scene = wall.instantiate()
+	var wall_scene: Node3D = wall.instantiate()
 	add_child(wall_scene)
 	wall_scene.global_position = Vector3(x * 5, y * 5, z * 5)
 
 	# Get the path from our library 
 	if texture_library.has(type_name):
-		var path = texture_library[type_name]
+		var path: String = texture_library[type_name]
 
 		# Load the file from disk
-		var tex = load(path)
+		var tex: Texture = load(path)
 
 		# Push the texture into the SHADER instance 
-		var mesh_node = wall_scene.get_node("MeshInstance3D")
-		var new_mat = mesh_node.get_active_material(0).duplicate()
+		var mesh_node: Node3D = wall_scene.get_node("MeshInstance3D")
+		var new_mat: Material = mesh_node.get_active_material(0).duplicate()
 		new_mat.albedo_texture = tex
 		mesh_node.set_surface_override_material(0, new_mat)
 	else:
 		print("Error: Texture ", type_name, " not found in library!")
 
 func run_lua_script(my_str: String) -> void:
-	var lua = LuaState.new()
+	var lua: LuaState = LuaState.new()
 	lua.open_libraries()
 	assert(lua.globals is LuaTable)
 	lua.globals["spawn_wall"] = spawn_wall
-	var result = lua.do_string(my_str)
+	var result: Variant = lua.do_string(my_str)
 
 	if result is LuaError:
 		printerr("Error in Lua code: ", result)

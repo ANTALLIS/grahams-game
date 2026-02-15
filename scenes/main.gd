@@ -27,9 +27,9 @@ extends Node
 # - You can extend them with new properties and functions 
 # - You can add them to another node as a child
 
-@onready var wall = preload("res://entities/environment/wall/wall.tscn")
+@onready var wall: PackedScene = preload("res://environment/wall/wall.tscn")
 
-var texture_library = {
+var texture_library: Dictionary = {
 	"Bars": "res://rltiles/dngn/wall/bars_red01.png",
 	"Beehive0": "res://rltiles/dngn/wall/beehives0.png",
 	"Beehive1": "res://rltiles/dngn/wall/beehives1.png",
@@ -52,44 +52,44 @@ var texture_library = {
 	"FloorSilver0": "res://rltiles/dngn/floor/metal_silver0.png"
 }
 
-func spawn_wall(x: float, y: float, z: float, type_name: String):
+func spawn_wall(x: float, y: float, z: float, type_name: String) -> void:
 	# Instance the base wall
-	var wall_scene = wall.instantiate()
+	var wall_scene: Node = wall.instantiate()
 	add_child(wall_scene)
 	wall_scene.global_position = Vector3(x, y, z)
 
 	# Get the path from our library 
 	if texture_library.has(type_name):
-		var path = texture_library[type_name]
+		var path: String = texture_library[type_name]
 
 		# Load the file from disk
-		var tex = load(path)
+		var tex: Resource  = load(path)
 
 		# Push the texture into the SHADER instance 
-		var mesh_node = wall_scene.get_node("MeshInstance3D")
-		var new_mat = mesh_node.get_active_material(0).duplicate()
+		var mesh_node: Node = wall_scene.get_node("MeshInstance3D")
+		var new_mat: Material = mesh_node.get_active_material(0).duplicate()
 		new_mat.albedo_texture = tex
 		mesh_node.set_surface_override_material(0, new_mat)
 	else:
 		print("Error: Texture ", type_name, " not found in library!")
 
-func spawn_floor():
-	for x in range(100):
-		for z in range(100):
+func spawn_floor() -> void:
+	for x: int in range(100):
+		for z: int in range(100):
 			if ((5 * z) < 80 || (5 * z) > 90):
 				# spawn_wall((5*x) - 50, -2.5, (5*z) - 50, "FloorSilver0")
 				pass
 
 
-func run_lua_script_test():
+func run_lua_script_test() -> void:
 	# 1. Create a Lua state
-	var lua = LuaState.new()
+	var lua: LuaState = LuaState.new()
 	# 2. Import Lua and Godot APIs into the state
 	#    Optionally pass which libraries should be opened to the method
 	lua.open_libraries()
 
 	# 3. Run Lua code using `LuaState.do_string` or `LuaState.do_file`
-	var result = lua.do_string("""
+	var result: Variant = lua.do_string("""
 	  local vector = Vector2(1, 2)
 	  return {
 		this_is_a_table = true,
@@ -108,21 +108,28 @@ func run_lua_script_test():
 
 	# 5. Access the global _G table via `LuaState.globals` property
 	assert(lua.globals is LuaTable)
-	lua.globals["a_godot_callable"] = func(): print("Hello from GDScript!")
+	
+	# Define the function with a specific signature
+	var my_function: Callable = func() -> void:
+		print("Hello from GDScript!")
+
+	# Assign it to your global table
+	lua.globals["a_godot_callable"] = my_function
+	
 	lua.do_string("""
 		a_godot_callable()  -- 'Hello from GDScript!'
 	""")
 
-func print_hello(my_str: String): 
+func print_hello(my_str: String) -> void: 
 	print("Hello from " + my_str + "!")
 
-func run_lua_script_test_two():
-	var lua = LuaState.new()
+func run_lua_script_test_two() -> void:
+	var lua: LuaState = LuaState.new()
 	lua.open_libraries()
 	assert(lua.globals is LuaTable)
 	lua.globals["print_hello"] = print_hello
 	lua.globals["spawn_wall"] = spawn_wall
-	var result = lua.do_string("""
+	var result: Variant = lua.do_string("""
 		print_hello("a")
 		print_hello("b")
 		print_hello("c")
@@ -135,13 +142,15 @@ func run_lua_script_test_two():
 	else:
 		print(result)  # [LuaTable:0x556069ee50ab]
 
-func run_lua_script(codestring: String):
-	var lua = LuaState.new()
+func run_lua_script(codestring: String) -> void:
+	var lua: LuaState = LuaState.new()
 	lua.open_libraries()
 	assert(lua.globals is LuaTable)
 	lua.globals["print_hello"] = print_hello
 	lua.globals["spawn_wall"] = spawn_wall
-	var result = lua.do_string(codestring)
+	
+	var result: Variant = lua.do_string(codestring)
+	
 	if result is LuaError:
 		printerr("Error in Lua code: ", result)
 	else:
@@ -155,12 +164,12 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	spawn_wall(20, 2.5, 20, "Bars")
 	spawn_wall(20, 2.5, 25, "Beehive0")
-	var i = 0
-	for j in [30, 35, 40, 45, 50, 55, 60, 65]:
+	var i: int = 0
+	for j: int in [30, 35, 40, 45, 50, 55, 60, 65]:
 		spawn_wall(j, 2.5, 35, "Brick" + str(i))
 		i += 1
 	i = 0
-	for j in [30, 35, 40, 45, 50, 55, 60, 65, 70, 75]:
+	for j: int in [30, 35, 40, 45, 50, 55, 60, 65, 70, 75]:
 		spawn_wall(j, 2.5, 50, "Beehive" + str(i))
 		i += 1
 	spawn_floor()
