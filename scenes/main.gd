@@ -27,7 +27,7 @@ extends Node
 # - You can extend them with new properties and functions 
 # - You can add them to another node as a child
 
-@onready var wall = preload("res://wall.tscn")
+@onready var wall = preload("res://entities/environment/wall/wall.tscn")
 
 var texture_library = {
 	"Bars": "res://rltiles/dngn/wall/bars_red01.png",

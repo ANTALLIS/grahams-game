@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://reskehrf2a5r"]
 
-[ext_resource type="Texture2D" uid="uid://dcoe6avptsjxh" path="res://crystal_wall06.png" id="1_xxgf6"]
+[ext_resource type="Texture2D" uid="uid://dcoe6avptsjxh" path="res://entities/environment/crystal_wall/crystal_wall06.png" id="1_xxgf6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oh6kn"]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcoe6avptsjxh"
-path.s3tc="res://.godot/imported/crystal_wall06.png-b8eda654c6b7cd405e31ec4b348ccf5d.s3tc.ctex"
+uid="uid://ba1g0o1q6gbnx"
+path.s3tc="res://.godot/imported/stone2_gray0.png-daee5e7a107ecfd4b85bd8fb70cad1f9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://crystal_wall06.png"
-dest_files=["res://.godot/imported/crystal_wall06.png-b8eda654c6b7cd405e31ec4b348ccf5d.s3tc.ctex"]
+source_file="res://misc/stone2_gray0.png"
+dest_files=["res://.godot/imported/stone2_gray0.png-daee5e7a107ecfd4b85bd8fb70cad1f9.s3tc.ctex"]
 
 [params]
 

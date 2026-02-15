@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ynqvwiu048d"
-path.s3tc="res://.godot/imported/human.png-3de2f08f60a0849f2d6e0068340d30c5.s3tc.ctex"
+uid="uid://c62ncwlmkm4gf"
+path.s3tc="res://.godot/imported/Antonio Terrain TEX 001.png-352192d9a5e272d352dfe72a00917a0d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://human.png"
-dest_files=["res://.godot/imported/human.png-3de2f08f60a0849f2d6e0068340d30c5.s3tc.ctex"]
+source_file="res://entities/environment/terrain/Antonio Terrain TEX 001.png"
+dest_files=["res://.godot/imported/Antonio Terrain TEX 001.png-352192d9a5e272d352dfe72a00917a0d.s3tc.ctex"]
 
 [params]
 

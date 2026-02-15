@@ -1,6 +1,6 @@
 extends LuaCodeEdit
 
-@onready var wall = preload("res://wall.tscn")
+@onready var wall = preload("res://entities/environment/wall/wall.tscn")
 
 var texture_library = {
 	"Bars": "res://rltiles/dngn/wall/bars_red01.png",
@@ -76,4 +76,3 @@ func _on_focus_exited() -> void:
 	print(text)
 	run_lua_script(text)
 	
-

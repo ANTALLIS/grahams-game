@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bdpb7tjx46m1m"]
 
-[ext_resource type="Script" uid="uid://hpold3166pne" path="res://guy.gd" id="1_tj2cq"]
-[ext_resource type="Script" uid="uid://d00abnw1i3iwu" path="res://fp_cam.gd" id="2_k2lot"]
+[ext_resource type="Script" uid="uid://hpold3166pne" path="res://entities/player/player.gd" id="1_tj2cq"]
+[ext_resource type="Script" uid="uid://d00abnw1i3iwu" path="res://systems/fp_cam.gd" id="2_k2lot"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ihqf1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8h3iv"]
 
-[node name="Guy" type="CharacterBody3D" unique_id=119122340]
+[node name="Player" type="CharacterBody3D" unique_id=119122340]
 script = ExtResource("1_tj2cq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=859899799]

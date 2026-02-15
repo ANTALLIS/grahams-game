@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba1g0o1q6gbnx"
-path.s3tc="res://.godot/imported/stone2_gray0.png-82af10661eea48cb5dc76e247bee17dc.s3tc.ctex"
+uid="uid://2ynqvwiu048d"
+path.s3tc="res://.godot/imported/human.png-932725f4c568e754ed237d776532dc2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://stone2_gray0.png"
-dest_files=["res://.godot/imported/stone2_gray0.png-82af10661eea48cb5dc76e247bee17dc.s3tc.ctex"]
+source_file="res://entities/characters/npc/human.png"
+dest_files=["res://.godot/imported/human.png-932725f4c568e754ed237d776532dc2d.s3tc.ctex"]
 
 [params]
 
