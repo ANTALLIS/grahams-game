@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d12qm0ygcmkco"]
+
+[ext_resource type="PackedScene" uid="uid://dgo0mdtp7s67l" path="res://assets/retro_computer/scene.gltf" id="1_wfor3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wfor3"]
+
+[node name="Computer" type="StaticBody3D" unique_id=273166066]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=920285913]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_wfor3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=100959571]
+
+[node name="Sketchfab_Scene" parent="MeshInstance3D" unique_id=2071501080 instance=ExtResource("1_wfor3")]

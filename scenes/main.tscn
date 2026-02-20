@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cf551bypgldtf" path="res://environment/metal_floor/metal_floor.tscn" id="12_og1vs"]
 [ext_resource type="Texture2D" uid="uid://bwjfb3en0u2sp" path="res://rltiles/dngn/floor/limestone0.png" id="13_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://c3g4jq3kwcxlt" path="res://environment/code_wall/code_block.tscn" id="14_vxglm"]
+[ext_resource type="PackedScene" uid="uid://d12qm0ygcmkco" path="res://scenes/experiment/computer.tscn" id="15_jkv2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
 albedo_texture = ExtResource("8_yc10j")
@@ -491,6 +492,9 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="CodeBlock" parent="." unique_id=1069235447 instance=ExtResource("14_vxglm")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 2, 23)
+
+[node name="Computer" parent="." unique_id=273166066 instance=ExtResource("15_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.330473, 3.6436603, 19.822187)
 
 [connection signal="focus_exited" from="LuaCodeEdit" to="LuaCodeEdit" method="_on_focus_exited"]
 [connection signal="body_exited" from="WinCube" to="Player" method="_on_win_cube_body_exited"]
