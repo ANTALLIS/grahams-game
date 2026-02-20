@@ -51,6 +51,7 @@ func run_lua_script(my_str: String) -> void:
 	lua.open_libraries()
 	assert(lua.globals is LuaTable)
 	lua.globals["spawn_wall"] = spawn_wall
+	
 	var result: Variant = lua.do_string(my_str)
 
 	if result is LuaError:
