@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cd40lx6q0p6xh"]
 
-[node name="Control" type="Control" unique_id=770053589]
+[ext_resource type="Script" uid="uid://s67ux7ogr5k3" path="res://scenes/experiment/tree.gd" id="1_y7arb"]
+
+[node name="ComputerScreen" type="Control" unique_id=770053589]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,3 +17,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Tree" type="Tree" parent="Panel" unique_id=520350715]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 92.0
+offset_right = 542.0
+offset_bottom = 466.0
+script = ExtResource("1_y7arb")

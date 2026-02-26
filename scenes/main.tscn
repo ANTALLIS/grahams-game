@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bwjfb3en0u2sp" path="res://rltiles/dngn/floor/limestone0.png" id="13_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://c3g4jq3kwcxlt" path="res://entities/environment/code_wall/code_block.tscn" id="14_vxglm"]
 [ext_resource type="PackedScene" uid="uid://d12qm0ygcmkco" path="res://scenes/experiment/computer.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://c3dcwa0gpy06m" path="res://entities/code_blocks/print_code_block.tscn" id="16_jbj1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
 albedo_texture = ExtResource("8_yc10j")
@@ -495,6 +496,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 2, 23)
 
 [node name="Computer" parent="." unique_id=273166066 instance=ExtResource("15_jkv2x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.330473, 2.7051847, 19.822187)
+
+[node name="PrintCodeBlock" parent="." unique_id=794085664 instance=ExtResource("16_jbj1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.462707, 0.84820867, 23.44671)
 
 [connection signal="focus_exited" from="LuaCodeEdit" to="LuaCodeEdit" method="_on_focus_exited"]
 [connection signal="body_exited" from="WinCube" to="Player" method="_on_win_cube_body_exited"]

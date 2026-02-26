@@ -4,6 +4,12 @@ extends CharacterBody3D
 const SPEED: float = 15.0
 const JUMP_VELOCITY: float = 18.0
 
+var player_inventory: Dictionary = {
+	"start" : 1,
+}
+
+func _init() -> void:
+	print("Player Inventory: ", player_inventory)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +32,11 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func insert_code_block(block_name: String) -> void:
+	if player_inventory.has(block_name):
+		player_inventory[block_name] += 1
+	else:
+		player_inventory.set(block_name, 1)
+	
+	print(player_inventory)

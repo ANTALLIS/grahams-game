@@ -66,10 +66,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("toggle_console_e") and !visible:
+	if Input.is_action_just_pressed("toggle_console") and !visible:
 		visible = !visible
-	if Input.is_action_just_pressed("toggle_console_esc") and visible:
-		visible = !visible
+		
 	if visible:
 		grab_focus()
 
