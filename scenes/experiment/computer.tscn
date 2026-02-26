@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://d12qm0ygcmkco"]
 
 [ext_resource type="PackedScene" uid="uid://dgo0mdtp7s67l" path="res://assets/retro_computer/scene.gltf" id="1_wfor3"]
+[ext_resource type="Script" uid="uid://d2qqev8lcmq6u" path="res://scenes/experiment/computer.gd" id="1_xxi56"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wfor3"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wfor3"]
+
 [node name="Computer" type="StaticBody3D" unique_id=273166066]
+script = ExtResource("1_xxi56")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=920285913]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -13,3 +17,13 @@ shape = SubResource("BoxShape3D_wfor3")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=100959571]
 
 [node name="Sketchfab_Scene" parent="MeshInstance3D" unique_id=2071501080 instance=ExtResource("1_wfor3")]
+
+[node name="InteractionContainer" type="Node3D" parent="." unique_id=957229020]
+
+[node name="Area3D" type="Area3D" parent="InteractionContainer" unique_id=361555357]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionContainer/Area3D" unique_id=668733699]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_wfor3")
+
+[connection signal="body_entered" from="InteractionContainer/Area3D" to="." method="_on_area_3d_body_entered"]

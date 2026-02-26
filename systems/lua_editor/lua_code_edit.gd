@@ -1,6 +1,6 @@
 extends LuaCodeEdit
 
-@onready var wall: PackedScene = preload("res://environment/wall/wall.tscn")
+@onready var wall: PackedScene = preload("res://entities/environment/wall/wall.tscn")
 
 var texture_library: Dictionary[String, String] = {
 	"Bars": "res://rltiles/dngn/wall/bars_red01.png",

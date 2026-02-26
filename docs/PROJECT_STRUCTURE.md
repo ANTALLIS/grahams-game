@@ -16,7 +16,7 @@ All project-related documentation:
 Defines core game objects and interactive elements:
 - **Player** – Player-controlled characters.
 - **NPCs** – Non-player characters.
-- **Environment objects** – Trees, buildings, and other interactive/decorative elements.
+- **Environment Objects** – Trees, buildings, and other interactive/decorative elements.
 
 ## Scenes
 Holds game world setups and levels:

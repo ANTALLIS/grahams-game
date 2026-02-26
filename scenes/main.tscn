@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dojic3bhhp67v"]
 
 [ext_resource type="Script" uid="uid://comkkcqe5whxh" path="res://scenes/main.gd" id="1_a8y0u"]
-[ext_resource type="PackedScene" uid="uid://reskehrf2a5r" path="res://environment/crystal_wall/crystal_wall.tscn" id="2_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://reskehrf2a5r" path="res://entities/environment/crystal_wall/crystal_wall.tscn" id="2_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bdpb7tjx46m1m" path="res://entities/player/player.tscn" id="3_jbj1t"]
-[ext_resource type="PackedScene" uid="uid://buvf4rsf7l4u3" path="res://environment/rock_wall/rock_wall.tscn" id="4_muem4"]
+[ext_resource type="PackedScene" uid="uid://buvf4rsf7l4u3" path="res://entities/environment/rock_wall/rock_wall.tscn" id="4_muem4"]
 [ext_resource type="PackedScene" uid="uid://dvv3fuwj4cpjj" path="res://entities/characters/npc/npc.tscn" id="5_dp3eg"]
-[ext_resource type="PackedScene" uid="uid://bjiby2wll8er2" path="res://environment/metal_wall/metal_wall.tscn" id="6_0ld40"]
-[ext_resource type="ArrayMesh" uid="uid://x7674nxdfq6f" path="res://environment/terrain/Antonio Terrain VOX 001.obj" id="7_gqmmt"]
-[ext_resource type="Texture2D" uid="uid://c1pnmnmisyhbg" path="res://environment/terrain/Antonio Terrain VOX TEX 001.png" id="8_yc10j"]
+[ext_resource type="PackedScene" uid="uid://bjiby2wll8er2" path="res://entities/environment/metal_wall/metal_wall.tscn" id="6_0ld40"]
+[ext_resource type="ArrayMesh" uid="uid://x7674nxdfq6f" path="res://entities/environment/terrain/Antonio Terrain VOX 001.obj" id="7_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://c1pnmnmisyhbg" path="res://entities/environment/terrain/Antonio Terrain VOX TEX 001.png" id="8_yc10j"]
 [ext_resource type="FontFile" uid="uid://cmh8p0n4tk675" path="res://assets/fonts/JetBrainsMono-Regular.ttf" id="9_jscy8"]
 [ext_resource type="Script" uid="uid://dd2rg0qknp4mq" path="res://systems/lua_editor/lua_code_edit.gd" id="10_pm3ni"]
 [ext_resource type="Script" uid="uid://exibwimgwxw0" path="res://scripts/win_cube.gd" id="11_y6deb"]
-[ext_resource type="PackedScene" uid="uid://cf551bypgldtf" path="res://environment/metal_floor/metal_floor.tscn" id="12_og1vs"]
+[ext_resource type="PackedScene" uid="uid://cf551bypgldtf" path="res://entities/environment/metal_floor/metal_floor.tscn" id="12_og1vs"]
 [ext_resource type="Texture2D" uid="uid://bwjfb3en0u2sp" path="res://rltiles/dngn/floor/limestone0.png" id="13_2wyq8"]
-[ext_resource type="PackedScene" uid="uid://c3g4jq3kwcxlt" path="res://environment/code_wall/code_block.tscn" id="14_vxglm"]
+[ext_resource type="PackedScene" uid="uid://c3g4jq3kwcxlt" path="res://entities/environment/code_wall/code_block.tscn" id="14_vxglm"]
 [ext_resource type="PackedScene" uid="uid://d12qm0ygcmkco" path="res://scenes/experiment/computer.tscn" id="15_jkv2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
@@ -494,7 +494,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 2, 23)
 
 [node name="Computer" parent="." unique_id=273166066 instance=ExtResource("15_jkv2x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.330473, 3.6436603, 19.822187)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.330473, 2.7051847, 19.822187)
 
 [connection signal="focus_exited" from="LuaCodeEdit" to="LuaCodeEdit" method="_on_focus_exited"]
 [connection signal="body_exited" from="WinCube" to="Player" method="_on_win_cube_body_exited"]
